@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+var playerWins=0
+var playerLoss=0
+var playerTies=0
+
+
+function playRound(playerSelection, computerPlay){
+let letter = ["r","p","s"];
+playerSelection = prompt("Enter your move\n r(rock), p(paper) and s(scissors)","");
+computerPlay = letter[Math.floor(Math.random() * letter.length)]
+
+
+    if(playerSelection == "r" && computerPlay == "p"){
+        playerLoss ++;
+        console.log("you lose paper beats rock!")}
+
+    else if (playerSelection == "p" && computerPlay == "r"){
+        playerWins ++;
+        console.log("you win paper beats rock!")}
+
+    else if (playerSelection == "s" && computerPlay == "r"){
+        playerLoss++ ;   
+        console.log("you lose rock beats scissors!")}
+    
+    else if (playerSelection == "s" && computerPlay == "r"){
+        playerWins++;
+        console.log("you win rock beats scissors!")}
+
+    else if (playerSelection == "p" && computerPlay == "s"){
+        playerLoss++;
+        console.log("you lose scissors beats rock!")}
+    
+    else if (playerSelection == "s" && computerPlay == "p"){
+        playerWins ++;
+        console.log("you win scissors beats rock!")}
+
+    else{console.log("its a tie")
+        playerTies++; }
+    
+
+}
+
+function game(){
+
+
+    for (let i = 0; i < 5; i++) 
+    {  playRound()  }
+
+    console.log(`You had ${playerWins} win(s), ${playerLoss} loss(es) and ${playerTies} tie(s)`)
+
+}
+
+
+game()
+
+    </script>
+</body>
+</html>

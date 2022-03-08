@@ -4,65 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width>, initial-scale=1.0">
-    <title>Document</title>
-
+    <script src="/js/main.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Rock, Paper, Scissors</title>
 </head>
 <body>
-    <script>
-var playerWins=0
-var playerLoss=0
-var playerTies=0
+    <div class="container">
+<section class="game-title">
+    <h1>ROCK PAPER SCISSORS</h1>
+</section>
 
+<section class="gameplay">
+<div class="gameplay-ui">
+        
+    <div class="player-ui">
+        <h1>Your move</h1>
+            <div id="player-move">
 
-function playRound(playerSelection, computerPlay){
-let letter = ["r","p","s"];
-playerSelection = prompt("Enter your move\n r(rock), p(paper) and s(scissors)","");
-computerPlay = letter[Math.floor(Math.random() * letter.length)]
+                <img class="image" data-moves="none" src="/img/none.png">
+                <img class="image" data-moves="p" src="/img/player-paper.png" >
+                <img class="image" data-moves="s" src="/img/player-scissors.png" >
+                <img class="image" data-moves="r" src="/img//player-rock.png" >
 
+            </div>
 
-    if(playerSelection == "r" && computerPlay == "p"){
-        playerLoss ++;
-        console.log("you lose paper beats rock!")}
+    </div>
 
-    else if (playerSelection == "p" && computerPlay == "r"){
-        playerWins ++;
-        console.log("you win paper beats rock!")}
-
-    else if (playerSelection == "s" && computerPlay == "r"){
-        playerLoss++ ;   
-        console.log("you lose rock beats scissors!")}
+    <div class="score-ui">
+        <h1>Score</h1>
+        <h1 class= 'score'></h1>
+        <p class="info"></p>
+            </div>
     
-    else if (playerSelection == "s" && computerPlay == "r"){
-        playerWins++;
-        console.log("you win rock beats scissors!")}
+    <div class="computer-ui">
+        <h1>Computers move</h1>
+        <div id="computer-move">
+            <img class="imagepc" data-moves="none" src="/img/none.png">
+            <img class="imagepc" data-moves="p" src="/img/computer-paper.png" >
+            <img class="imagepc" data-moves="s" src="/img/compupter-scissors.png" >
+            <img class="imagepc" data-moves="r" src="/img/computer-rock.png" >
+        </div>
 
-    else if (playerSelection == "p" && computerPlay == "s"){
-        playerLoss++;
-        console.log("you lose scissors beats rock!")}
+
+    </div>
+</div>
+
+</section>
+
+<section class="player-buttons">
+
     
-    else if (playerSelection == "s" && computerPlay == "p"){
-        playerWins ++;
-        console.log("you win scissors beats rock!")}
+    <div id="choice-text">
+        <h1>Choose your move</h1>
+    </div> 
+<div class="inputs">
+<button class="Button" data-button="r">Rock</button>
+<button class="Button" data-button="p">Paper</button>
+<button class="Button" data-button="s">Scissors</button>
 
-    else{console.log("its a tie")
-        playerTies++; }
-    
-
-}
-
-function game(){
-
-
-    for (let i = 0; i < 5; i++) 
-    {  playRound()  }
-
-    console.log(`You had ${playerWins} win(s), ${playerLoss} loss(es) and ${playerTies} tie(s)`)
-
-}
-
-
-game()
-
-    </script>
+</div>
+</section>
+</div>    
 </body>
 </html>
